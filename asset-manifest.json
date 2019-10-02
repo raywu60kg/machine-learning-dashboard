@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/machine-learning-dashboard/static/css/main.b100e6da.chunk.css",
+    "main.js": "/machine-learning-dashboard/static/js/main.3e0c05d0.chunk.js",
+    "main.js.map": "/machine-learning-dashboard/static/js/main.3e0c05d0.chunk.js.map",
+    "runtime-main.js": "/machine-learning-dashboard/static/js/runtime-main.3d3679b9.js",
+    "runtime-main.js.map": "/machine-learning-dashboard/static/js/runtime-main.3d3679b9.js.map",
+    "static/js/2.5aafcd63.chunk.js": "/machine-learning-dashboard/static/js/2.5aafcd63.chunk.js",
+    "static/js/2.5aafcd63.chunk.js.map": "/machine-learning-dashboard/static/js/2.5aafcd63.chunk.js.map",
+    "index.html": "/machine-learning-dashboard/index.html",
+    "precache-manifest.1caa6c3f9330a27b84e2ef15ef01772c.js": "/machine-learning-dashboard/precache-manifest.1caa6c3f9330a27b84e2ef15ef01772c.js",
+    "service-worker.js": "/machine-learning-dashboard/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/machine-learning-dashboard/static/css/main.b100e6da.chunk.css.map",
+    "static/media/logo.svg": "/machine-learning-dashboard/static/media/logo.25bf045c.svg"
+  }
+}
