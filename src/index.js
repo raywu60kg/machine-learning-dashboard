@@ -21,13 +21,13 @@ ReactDOM.render(
             <Menu
                 theme="dark"
                 mode="horizontal"
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={['model1']}
                 style={{ lineHeight: '64px' }}
             >
                 {/* <Icon type="dashboard" theme="filled" /> */}
-                <Menu.Item key="1">model 1</Menu.Item>
-                <Menu.Item key="2">model 2</Menu.Item>
-                <Menu.Item key="3">model 3</Menu.Item>
+                <Menu.Item key="model1"  >model 1</Menu.Item>
+                <Menu.Item key="model2"  >model 2</Menu.Item>
+                <Menu.Item key="model3"  >model 3</Menu.Item>
             </Menu>
         </Header>
         <Content style={{ padding: '0 50px' }}>
@@ -39,11 +39,11 @@ ReactDOM.render(
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={['1']}
-                        defaultOpenKeys={['sub1']}
+                        defaultOpenKeys={['modelInformation']}
                         style={{ height: '100%' }}
                     >
                         <SubMenu
-                            key="sub1"
+                            key="modelInformation"
                             title={
                                 <span>
                                     <Icon type="folder" theme="twoTone" />
@@ -51,12 +51,12 @@ ReactDOM.render(
                                 </span>
                             }
                         >
-                            <Menu.Item key="1">Basic Information</Menu.Item>
-                            <Menu.Item key="2">Model Structure</Menu.Item>
-                            <Menu.Item key="3">Hyper Parameters</Menu.Item>
+                            <Menu.Item key="basicInformation" >Basic Information</Menu.Item>
+                            <Menu.Item key="modelStructure" >Model Structure</Menu.Item>
+                            <Menu.Item key="hyperParameters" >Hyper Parameters</Menu.Item>
                         </SubMenu>
                         <SubMenu
-                            key="sub2"
+                            key="visualization"
                             title={
                                 <span>
                                     <Icon type="fund" theme="twoTone" />
@@ -64,16 +64,16 @@ ReactDOM.render(
                                 </span>
                             }
                         >
-                            <Menu.Item key="5">Loss</Menu.Item>
-                            <Menu.Item key="6">Confusion Matrix</Menu.Item>
-                            <Menu.Item key="7">Predictions</Menu.Item>
+                            <Menu.Item key="loss"  >Loss</Menu.Item>
+                            <Menu.Item key="confusionMatrix"  >Confusion Matrix</Menu.Item>
+                            <Menu.Item key="predictions"  >Predictions</Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>
                 <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>
             </Layout>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>machine learning dashboard</Footer>
+        <Footer style={{ textAlign: 'center' }}>Machine Learning Dashboard</Footer>
     </Layout>,
     document.getElementById('root'),
 );
