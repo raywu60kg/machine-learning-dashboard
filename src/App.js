@@ -5,16 +5,14 @@ import './index.css';
 import 'antd/dist/antd.css';
 import './index.css';
 import './App.css';
+
+import HandleMenuStatus from './handle_menu_status'
 import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 const { Title, Paragraph, Text } = Typography;
-function showState() {
-  return (
-    <ul>{this.state}</ul>
-  );
-}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -80,6 +78,7 @@ class App extends React.Component {
                   <Menu.Item key="basicInformation" >Basic Information</Menu.Item>
                   <Menu.Item key="modelStructure" >Model Structure</Menu.Item>
                   <Menu.Item key="hyperParameters" >Hyper Parameters</Menu.Item>
+                  <Menu.Item key="trainingStatus" >Training Status</Menu.Item>
                 </SubMenu>
                 <SubMenu
                   key="visualization"
@@ -97,7 +96,11 @@ class App extends React.Component {
                 </SubMenu>
               </Menu>
             </Sider>
-            <Content style={{ padding: '0 24px', minHeight: 280 }}>showState</Content>
+            {/* <Content style={{ padding: '0 24px', minHeight: 280 }}>showState {this.state.modelKey} {this.state.subMenuIndex}</Content> */}
+            {/* <WrappedRegistrationForm style={{ textAlign: 'center' }}/> */}
+            
+            <HandleMenuStatus modelKey={this.state.modelKey} subMenuIndex={this.state.subMenuIndex} />
+            
           </Layout>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Machine Learning Dashboard</Footer>
