@@ -23,12 +23,10 @@ class App extends React.Component {
   
   handleModelItemSelected({key}) {
     this.setState({modelKey: key})
-    console.log("666666",key,this.state)
   }
 
   handleSubMenuItemSelected({key}) {
     this.setState({ subMenuIndex: key });
-    console.log("77777",key, this.state)
   }
 
   render() {
@@ -92,7 +90,7 @@ class App extends React.Component {
                 >
                   <Menu.Item key="loss"  >Loss</Menu.Item>
                   <Menu.Item key="confusionMatrix"  >Confusion Matrix</Menu.Item>
-                  <Menu.Item key="predictions"  >Predictions</Menu.Item>
+                  <Menu.Item key="rocCurve"  >Roc Curve</Menu.Item>
                 </SubMenu>
               </Menu>
             </Sider>
