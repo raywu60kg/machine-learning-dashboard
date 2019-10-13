@@ -7,7 +7,7 @@ import './index.css';
 import './App.css';
 
 import HandleMenuStatus from './handle_menu_status'
-import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Typography,Row } from 'antd';
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
@@ -98,7 +98,7 @@ class App extends React.Component {
             {/* <WrappedRegistrationForm style={{ textAlign: 'center' }}/> */}
             
             <HandleMenuStatus modelKey={this.state.modelKey} subMenuIndex={this.state.subMenuIndex} />
-            
+
           </Layout>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Machine Learning Dashboard</Footer>

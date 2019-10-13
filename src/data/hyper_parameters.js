@@ -2,8 +2,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import '../index.css';
-import { Slider, InputNumber, Row, Col } from 'antd';
-
+import { Slider, InputNumber, Row, Col, Layout,Button } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
 class HyperParametersInteger extends React.Component {
     state = {
         inputValue: 1,
@@ -19,7 +19,7 @@ class HyperParametersInteger extends React.Component {
         const { inputValue } = this.state;
         return (
             <Row>
-                <Col span={12}>
+                <Col span={50}>
                     <Slider
                         min={1}
                         max={20}
@@ -82,4 +82,31 @@ class HyperParametersFloat extends React.Component {
         );
     }
 }
-export default HyperParametersInteger;
+
+class HyperParameters extends React.Component {
+
+    render() {
+        return (
+            <Layout style={{ padding: '24px 24px', background: '#fff' }}>
+                <Row>
+                    <Content>
+                       Learning rate
+                    </Content>
+                    <HyperParametersFloat/>
+                </Row>
+                <Row>
+                    <Content>
+                       Dropout rate
+                    </Content>
+                    <HyperParametersFloat/>
+                </Row> 
+                <Row>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                </Row>   
+            </Layout>
+        );
+    }
+}
+export default HyperParameters;

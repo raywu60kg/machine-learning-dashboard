@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
 import WrappedRegistrationForm from './data/basic_information'
-import HyperParametersInteger from './data/hyper_parameters'
+import HyperParameters from './data/hyper_parameters'
 import ModelStructure from './data/model_structure'
 import TrainingStatus from './data/training_status'
 import LineChart from './Visualizations/line_chart'
@@ -14,7 +14,7 @@ function HandleMenuStatus(props) {
     if (props.subMenuIndex === 'basicInformation') {
         return <WrappedRegistrationForm/>
     }else if (props.subMenuIndex === 'hyperParameters') {
-        return <HyperParametersInteger/>
+        return <HyperParameters/>
     }else if (props.subMenuIndex === 'modelStructure') {
         return <ModelStructure/>
     }else if (props.subMenuIndex === 'trainingStatus') {

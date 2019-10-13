@@ -37,7 +37,7 @@ class LineChart extends React.Component {
         const line = d3.line()
             .x(d => x(d.a))
             .y(d => y(d.b))
-            .curve(d3.curveCatmullRom.alpha(0.5)) //curve line
+            // .curve(d3.curveCatmullRom.alpha(0.5)) //curve line
 
         const xTicks = x.ticks(6).map(d => (
             x(d) > margin && x(d) < w ?

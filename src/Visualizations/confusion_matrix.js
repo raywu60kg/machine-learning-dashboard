@@ -9,47 +9,53 @@ function ConfusionMatrix() {
 
     const columns = [
         {
-            title: 'Name',
+            title: '',
             dataIndex: 'name',
-            render: text => <a>{text}</a>,
         },
         {
-            title: 'Cash Assets',
-            className: 'column-money',
-            dataIndex: 'money',
+            title: 'Class 1 predicted',
+            dataIndex: 'class1',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
+            title: 'Class 2 predicted',
+            dataIndex: 'class2',
+        },
+        {
+            title: 'Class 3 predicted',
+            dataIndex: 'class3',
         },
     ];
 
     const data = [
         {
             key: '1',
-            name: 'John Brown',
-            money: '￥300,000.00',
-            address: 'New York No. 1 Lake Park',
+            name: 'Class 1 Actual',
+            class1: 300,
+            class2: 100,
+            class3: 100,
         },
         {
             key: '2',
-            name: 'Jim Green',
-            money: '￥1,256,000.00',
-            address: 'London No. 1 Lake Park',
+            name: 'Class 2 Actual',
+            class1: 100,
+            class2: 300,
+            class3: 100,
         },
         {
             key: '3',
-            name: 'Joe Black',
-            money: '￥120,000.00',
-            address: 'Sidney No. 1 Lake Park',
+            name: 'Class 3 Actual',
+            class1: 100,
+            class2: 100,
+            class3: 300,
         },
     ];
-    return <Table
-        columns={columns}
-        dataSource={data}
-        bordered
-        title={() => 'Header'}
-        footer={() => 'Footer'}
-    />
+    return (
+        <Table
+            pagination={false}
+            columns={columns}
+            dataSource={data}
+            title={() => 'Confusion Matrix'}
+        />
+    )
 }
 export default ConfusionMatrix;
