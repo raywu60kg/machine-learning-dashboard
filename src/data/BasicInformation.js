@@ -19,7 +19,7 @@ import {
 } from 'antd';
 
 
-class RegistrationForm extends React.Component {
+class InformationForm extends React.Component {
   // state = {
   //   confirmDirty: false,
   //   autoCompleteResult: [],
@@ -110,7 +110,7 @@ class RegistrationForm extends React.Component {
               rules: [
                 {
                   required: true,
-                  message: 'Please the owner of this model',
+                  message: 'Please input the owner of this model',
                 }
               ],
             })(<Input />)}
@@ -126,6 +126,6 @@ class RegistrationForm extends React.Component {
   }
 }
 
-const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
+const BasicInformation = Form.create({ name: 'InformationForm' })(InformationForm);
 
-export default WrappedRegistrationForm;
+export default BasicInformation;

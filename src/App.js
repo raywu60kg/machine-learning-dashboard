@@ -6,7 +6,7 @@ import 'antd/dist/antd.css';
 import './index.css';
 import './App.css';
 
-import HandleMenuStatus from './handle_menu_status'
+import HandleMenuStatus from './HandleMenuStatus'
 import { Layout, Menu, Breadcrumb, Icon, Typography,Row } from 'antd';
 
 const { SubMenu } = Menu;
