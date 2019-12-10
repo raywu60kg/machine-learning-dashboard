@@ -71,13 +71,18 @@ class HandleMenuStatus extends React.Component {
                 'return': <LineChart/>
             },
         }
+        this.modelDisplayName = {
+            'model1': 'Model 1   ',
+            'model2': 'Model 2   ',
+            'model3': 'Model 3   '
+        }
     }
 
     render() {
         return (
             <Layout>
                 <Header style={{ background: '#fff', padding: '24px 16px 64px',textAlign:'center' }}>
-                    <Title level={3}>{this.props.modelKey}  {this.MenuItemMappingObject[this.props.subMenuIndex]["displayName"]}</Title>
+                    <Title level={3}>{this.modelDisplayName[this.props.modelKey]} {this.MenuItemMappingObject[this.props.subMenuIndex]["displayName"]}</Title>
                 </Header>
                 <Content>
                     {this.MenuItemMappingObject[this.props.subMenuIndex]["return"]}

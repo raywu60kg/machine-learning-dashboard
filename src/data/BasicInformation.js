@@ -72,11 +72,11 @@ class InformationForm extends React.Component {
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
-        sm: { span: 8 },
+        sm: { span: 3 },
       },
       wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 },
+        xs: { span: 8 },
+        sm: { span: 12 },
       },
     };
     const tailFormItemLayout = {
@@ -93,35 +93,47 @@ class InformationForm extends React.Component {
     };
 
     return (
-      <Layout style={{ padding: '0px 0px', background: '#fff' }}>
-        <Form {...formItemLayout}>
-          <Form.Item label="Model name">
-            {getFieldDecorator('modelName', {
-              rules: [
-                {
-                  required: true,
-                  message: 'Please input model name',
-                },
-              ],
-            })(<Input />)}
-          </Form.Item>
-          <Form.Item label="Owner">
-            {getFieldDecorator('owner', {
-              rules: [
-                {
-                  required: true,
-                  message: 'Please input the owner of this model',
-                }
-              ],
-            })(<Input />)}
-          </Form.Item>
-          <Form.Item {...tailFormItemLayout}>
-            <Button type="primary" htmlType="submit">
-              Submit
+      <Layout style={{ padding: '0px 36px', background: '#fff' }}>
+        <Form >
+          <Row>
+            <Col span={20}>
+              <Form.Item label="Model name">
+                {getFieldDecorator('modelName', {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input model name',
+                    },
+                  ],
+                })(<Input />)}
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={20}>
+              <Form.Item label="Owner">
+                {getFieldDecorator('owner', {
+                  rules: [
+                    {
+                      required: true,
+                      message: 'Please input the owner of this model',
+                    }
+                  ],
+                })(<Input />)}
+              </Form.Item>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={2}>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  Submit
               </Button>
-          </Form.Item>
+              </Form.Item>
+            </Col>
+          </Row>
         </Form>
-      </Layout>      
+      </Layout>
     );
   }
 }
