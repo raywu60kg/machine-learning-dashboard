@@ -54,7 +54,6 @@ function ConfusionMatrix() {
             pagination={false}
             columns={columns}
             dataSource={data}
-            title={() => 'Confusion Matrix'}
         />
     )
 }

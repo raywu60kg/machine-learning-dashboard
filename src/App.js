@@ -21,9 +21,9 @@ class App extends React.Component {
     };
 
 
-    this.handleSubMenuItemSelected = this.handleSubMenuItemSelected.bind(this);
-    this.handleModelItemSelected = this.handleModelItemSelected.bind(this);
-    this.state = { modelKey: "model1", subMenuIndex: 'basicInformation' };
+    // this.handleSubMenuItemSelected = this.handleSubMenuItemSelected.bind(this);
+    // this.handleModelItemSelected = this.handleModelItemSelected.bind(this);
+    this.state = { subMenuIndex: 'basicInformation' };
   }
   toggleCollapsed = () => {
     this.setState({
@@ -31,90 +31,80 @@ class App extends React.Component {
     });
   };
 
-  handleModelItemSelected({ key }) {
-    this.setState({ modelKey: key })
-  }
+  // handleModelItemSelected({ key }) {
+  //   this.setState({ modelKey: key })
+  // }
 
-  handleSubMenuItemSelected({ key }) {
-    this.setState({ subMenuIndex: key });
+  handleSubMenuItemSelected = (event) => {
+    console.log(`sub model key`, event.key)
+    this.setState({ subMenuIndex: event.key });
   }
 
   render() {
     return (
-      <Layout>
-        <Header className="header-1">
-          <Row>
-            <Col span={24}>
-              <Typography>
-                <Title><font color="white">MACHINE LEARNING DASHBOARD</font></Title>
-              </Typography>
-            </Col>
-          </Row>
+      <Layout >
+        <Sider
+          breakpoint="lg"
+          collapsedWidth="0"
+          theme='light'
+          onBreakpoint={broken => {
+            console.log(broken);
+          }}
+          onCollapse={(collapsed, type) => {
+            console.log(collapsed, type);
+          }}
+        >
+          <Content style={{padding:'24px 16px'}}>
+            <Title level={4}>MACHINE LEARNING DASHBOARD</Title>
+          </Content>
 
-
-        </Header>
-        <Header className="header">
           <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={['model1']}
-            style={{ lineHeight: '64px' }}
-            onClick={this.handleModelItemSelected}
+            mode="inline"
+            theme="light"
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['modelInformation']}
+          // style={{ height: '100%' }}
           >
-            <Menu.Item key="model1"  >model 1</Menu.Item>
-            <Menu.Item key="model2"  >model 2</Menu.Item>
-            <Menu.Item key="model3"  >model 3</Menu.Item>
-          </Menu>
-        </Header>
-        <Layout style={{ padding: '24px 0', background: '#fff', minHeight: '100vh' }}>
-          <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.toggleCollapsed}>
-
-            <Menu
-              mode="inline"
-              theme="dark"
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['modelInformation']}
-            // style={{ height: '100%' }}
+            <SubMenu
+              key="modelInformation"
+              title={
+                <span>
+                  <Icon type="folder" theme="twoTone" />
+                  Model Information
+                    </span>
+              }
+              onClick={this.handleSubMenuItemSelected}
             >
-              <SubMenu
-                key="modelInformation"
-                title={
-                  <span>
-                    <Icon type="folder" theme="twoTone" />
-                    Model Information
+              <Menu.Item key="basicInformation" >Basic Information</Menu.Item>
+              <Menu.Item key="modelStructure" >Model Structure</Menu.Item>
+              <Menu.Item key="hyperParameters" >Hyper Parameters</Menu.Item>
+              <Menu.Item key="trainingStatus" >Training Status</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="visualization"
+              title={
+                <span>
+                  <Icon type="fund" theme="twoTone" />
+                  Visualization
                     </span>
-                }
-                onClick={this.handleSubMenuItemSelected}
-              >
-                <Menu.Item key="basicInformation" >Basic Information</Menu.Item>
-                <Menu.Item key="modelStructure" >Model Structure</Menu.Item>
-                <Menu.Item key="hyperParameters" >Hyper Parameters</Menu.Item>
-                <Menu.Item key="trainingStatus" >Training Status</Menu.Item>
-              </SubMenu>
-              <SubMenu
-                key="visualization"
-                title={
-                  <span>
-                    <Icon type="fund" theme="twoTone" />
-                    Visualization
-                    </span>
-                }
-                onClick={this.handleSubMenuItemSelected}
-              >
-                <Menu.Item key="loss"  >Loss</Menu.Item>
-                <Menu.Item key="confusionMatrix"  >Confusion Matrix</Menu.Item>
-                <Menu.Item key="rocCurve"  >Roc Curve</Menu.Item>
-              </SubMenu>
-            </Menu>
-          </Sider>
+              }
+              onClick={this.handleSubMenuItemSelected}
+            >
+              <Menu.Item key="loss"  >Loss</Menu.Item>
+              <Menu.Item key="confusionMatrix"  >Confusion Matrix</Menu.Item>
+              <Menu.Item key="rocCurve"  >Roc Curve</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
+        <Layout>
 
-
-          <HandleMenuStatus modelKey={this.state.modelKey} subMenuIndex={this.state.subMenuIndex} />
+          <HandleMenuStatus  subMenuIndex={this.state.subMenuIndex} />
 
           <Footer style={{ textAlign: 'center' }}>Machine Learning Dashboard</Footer>
-        </Layout>
 
-      </Layout>
+
+        </Layout >
+      </Layout >
     )
   }
 }
