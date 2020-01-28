@@ -1,11 +1,11 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
-import HyperParameters from './data/HyperParameters'
-import ModelStructure from './data/model_structure'
-import TrainingStatus from './data/training_status'
-import LineChart from './Visualizations/line_chart'
-import ConfusionMatrix from './Visualizations/confusion_matrix'
-import BasicInformation from './data/BasicInformation';
+import HyperParameters from './info/HyperParameters'
+import ModelStructure from './info/model_structure'
+import TrainingStatus from './info/training_status'
+import LineChart from './visualizations/line_chart'
+import ConfusionMatrix from './visualizations/confusion_matrix'
+import BasicInformation from './info/BasicInformation';
 
 
 // const { Content} = Layout;
