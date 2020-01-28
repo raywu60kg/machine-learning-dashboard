@@ -19,10 +19,6 @@ class App extends React.Component {
     this.state = {
       collapsed: false,
     };
-
-
-    // this.handleSubMenuItemSelected = this.handleSubMenuItemSelected.bind(this);
-    // this.handleModelItemSelected = this.handleModelItemSelected.bind(this);
     this.state = { subMenuIndex: 'basicInformation' };
   }
   toggleCollapsed = () => {
@@ -30,11 +26,6 @@ class App extends React.Component {
       collapsed: !this.state.collapsed,
     });
   };
-
-  // handleModelItemSelected({ key }) {
-  //   this.setState({ modelKey: key })
-  // }
-
   handleSubMenuItemSelected = (event) => {
     console.log(`sub model key`, event.key)
     this.setState({ subMenuIndex: event.key });
@@ -53,10 +44,11 @@ class App extends React.Component {
           onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
           }}
+          style={{ padding: '36px 0px'}}
         >
-          <Content style={{padding:'24px 16px'}}>
-            <Title level={4}>MACHINE LEARNING DASHBOARD</Title>
-          </Content>
+          {/* <Content style={{padding:'24px 16px'}}>
+            MACHINE LEARNING DASHBOARD
+          </Content> */}
 
           <Menu
             mode="inline"

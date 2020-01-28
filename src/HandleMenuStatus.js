@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
-import HyperParameters from './data/hyper_parameters'
+import HyperParameters from './data/HyperParameters'
 import ModelStructure from './data/model_structure'
 import TrainingStatus from './data/training_status'
 import LineChart from './Visualizations/line_chart'
