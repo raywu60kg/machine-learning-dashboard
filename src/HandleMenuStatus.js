@@ -4,7 +4,7 @@ import HyperParameters from './info/HyperParameters'
 import ModelStructure from './info/ModelStructure'
 import TrainingStatus from './info/TrainingStatus'
 import LineChart from './visualizations/line_chart'
-import ConfusionMatrix from './visualizations/confusion_matrix'
+import ConfusionMatrix from './visualizations/ConfusionMatrix'
 import BasicInformation from './info/BasicInformation';
 
 

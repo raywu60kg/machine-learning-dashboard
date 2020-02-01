@@ -1,86 +1,68 @@
 import React from 'react';
-import * as d3 from 'd3'
-import '../index.css'
-import '../App.css';
+import CanvasJSReact from './canvasjs.react';
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
+const options = {
+    animationEnabled: true,	
+    title:{
+        text: "Number of New Customers"
+    },
+    axisY : {
+        title: "Number of Customers",
+        includeZero: false
+    },
+    toolTip: {
+        shared: true
+    },
+    data: [{
+        type: "spline",
+        name: "2016",
+        showInLegend: true,
+        dataPoints: [
+            { y: 155, label: "Jan" },
+            { y: 150, label: "Feb" },
+            { y: 152, label: "Mar" },
+            { y: 148, label: "Apr" },
+            { y: 142, label: "May" },
+            { y: 150, label: "Jun" },
+            { y: 146, label: "Jul" },
+            { y: 149, label: "Aug" },
+            { y: 153, label: "Sept" },
+            { y: 158, label: "Oct" },
+            { y: 154, label: "Nov" },
+            { y: 150, label: "Dec" }
+        ]
+    },
+    {
+        type: "spline",
+        name: "2017",
+        showInLegend: true,
+        dataPoints: [
+            { y: 172, label: "Jan" },
+            { y: 173, label: "Feb" },
+            { y: 175, label: "Mar" },
+            { y: 172, label: "Apr" },
+            { y: 162, label: "May" },
+            { y: 165, label: "Jun" },
+            { y: 172, label: "Jul" },
+            { y: 168, label: "Aug" },
+            { y: 175, label: "Sept" },
+            { y: 170, label: "Oct" },
+            { y: 165, label: "Nov" },
+            { y: 169, label: "Dec" }
+        ]
+    }]
+}
 
 class LineChart extends React.Component {
+    
     render() {
-
-        // const { data, width, height } = this.props
-        const width = 500, height = 350, margin = 20
-        const data = [
-            { a: 1, b: 3 },
-            { a: 2, b: 6 },
-            { a: 3, b: 2 },
-            { a: 4, b: 12 },
-            { a: 5, b: 8 }
-        ]
-
-        const h = height - 2 * margin, w = width - 2 * margin
-
-        //number formatter
-        const xFormat = d3.format('.2')
-
-        //x scale
-        const x = d3.scaleLinear()
-            .domain(d3.extent(data, d => d.a)) //domain: [min,max] of a
-            .range([margin, w])
-
-        //y scale
-        const y = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.b)]) // domain [0,max] of b (start from 0)
-            .range([h, margin])
-
-        //line generator: each point is [x(d.a), y(d.b)] where d is a row in data
-        // and x, y are scales (e.g. x(10) returns pixel value of 10 scaled by x)
-        const line = d3.line()
-            .x(d => x(d.a))
-            .y(d => y(d.b))
-            // .curve(d3.curveCatmullRom.alpha(0.5)) //curve line
-
-        const xTicks = x.ticks(6).map(d => (
-            x(d) > margin && x(d) < w ?
-                <g transform={`translate(${x(d)},${h + margin})`}>
-                    <text>{xFormat(d)}</text>
-                    <line x1='0' x1='0' y1='0' y2='5' transform="translate(0,-20)" />
-                </g>
-                : null
-        ))
-
-        const yTicks = y.ticks(5).map(d => (
-            y(d) > 10 && y(d) < h ?
-                <g transform={`translate(${margin},${y(d)})`}>
-                    <text x="-12" y="5">{xFormat(d)}</text>
-                    <line x1='0' x1='5' y1='0' y2='0' transform="translate(-5,0)" />
-                    <line className='gridline' x1='0' x1={w - margin} y1='0' y2='0' transform="translate(-5,0)" />
-                </g>
-                : null
-        ))
-
         return (
-            <svg width={width} height={height}>
-                <line className="axis" x1={margin} x2={w} y1={h} y2={h} />
-                <line className="axis" x1={margin} x2={margin} y1={margin} y2={h} />
-                <path d={line(data)} />
-                <g className="axis-labels">
-                    {xTicks}
-                </g>
-                <g className="axis-labels">
-                    {yTicks}
-                </g>
-            </svg>
+			<CanvasJSChart options = {options} />
         )
     }
 }
 
-// const width = 500, height = 350, margin = 20
-// const data = [
-//     { a: 1, b: 3 },
-//     { a: 2, b: 6 },
-//     { a: 3, b: 2 },
-//     { a: 4, b: 12 },
-//     { a: 5, b: 8 }
-// ]
+
 
 export default LineChart;
