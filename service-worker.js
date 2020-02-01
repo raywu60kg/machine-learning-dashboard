@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/machine-learning-dashboard/precache-manifest.d9f6ab3f267dc20e9fc9ef99509fac93.js"
+  "/machine-learning-dashboard/precache-manifest.561032def43c0aa89087068d304c8521.js"
 );
 
 workbox.clientsClaim();
