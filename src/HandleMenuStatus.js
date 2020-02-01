@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
 import HyperParameters from './info/HyperParameters'
-import ModelStructure from './info/model_structure'
-import TrainingStatus from './info/training_status'
+import ModelStructure from './info/ModelStructure'
+import TrainingStatus from './info/TrainingStatus'
 import LineChart from './visualizations/line_chart'
 import ConfusionMatrix from './visualizations/confusion_matrix'
 import BasicInformation from './info/BasicInformation';

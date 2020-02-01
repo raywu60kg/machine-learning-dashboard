@@ -4,41 +4,6 @@ import '../index.css';
 import { Progress, Layout, Row, Button, Col } from 'antd';
 
 
-// const TrainingStatus = () => (
-//   <div>
-//     <Progress
-//       strokeColor={{
-//         '0%': '#108ee9',
-//         '100%': '#87d068',
-//       }}
-//       percent={99.9}
-//     />
-//     <Progress
-//       strokeColor={{
-//         from: '#108ee9',
-//         to: '#87d068',
-//       }}
-//       percent={99.9}
-//       status="active"
-//     />
-//     <Progress
-//       type="circle"
-//       strokeColor={{
-//         '0%': '#108ee9',
-//         '100%': '#87d068',
-//       }}
-//       percent={90}
-//     />
-//     <Progress
-//       type="circle"
-//       strokeColor={{
-//         '0%': '#108ee9',
-//         '100%': '#87d068',
-//       }}
-//       percent={100}
-//     />
-//   </div>
-// );
 class TrainingStatus extends React.Component {
   constructor(props) {
     super(props);
@@ -83,7 +48,7 @@ class TrainingStatus extends React.Component {
 
   render() {
     return (
-      <Layout style={{ padding: '24px 50px', background: '#fff' }}>
+      <Layout style={{ padding: '0px 36px', background: '#fff' }}>
         <Row style={{ marginBottom: 30 }}>
           <Progress
             type="line"
@@ -91,11 +56,11 @@ class TrainingStatus extends React.Component {
               '0%': '#108ee9',
               '100%': '#87d068',
             }}
-            strokeWidth={100}
+            strokeWidth={10}
             percent={this.state.trainingProgress}
           />
         </Row>
-        <Row>
+        <Row style={{ marginBottom: 30 }}>
           <Col span={4}> 
             <Button type="primary" htmlType="submit" onClick={this.handleStartTrainingOnClick}>
               Start Training
