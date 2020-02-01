@@ -3,9 +3,10 @@ import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
 import HyperParameters from './info/HyperParameters'
 import ModelStructure from './info/ModelStructure'
 import TrainingStatus from './info/TrainingStatus'
-import LineChart from './visualizations/line_chart'
+import EpochsVsLoss from './visualizations/EpochsVsLoss'
 import ConfusionMatrix from './visualizations/ConfusionMatrix'
 import BasicInformation from './info/BasicInformation';
+import RocCurve from './visualizations/RocCurve'
 
 
 // const { Content} = Layout;
@@ -60,7 +61,7 @@ class HandleMenuStatus extends React.Component {
             },
             'loss': {
                 'displayName': 'Loss',
-                'return': <LineChart/>
+                'return': <EpochsVsLoss/>
             },
             'confusionMatrix': {
                 'displayName': 'Confusion Matrix',
@@ -68,7 +69,7 @@ class HandleMenuStatus extends React.Component {
             },
             'rocCurve': {
                 'displayName': 'Roc Curve',
-                'return': <LineChart/>
+                'return': <RocCurve/>
             },
         }
     }
