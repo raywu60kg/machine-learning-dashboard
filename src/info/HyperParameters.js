@@ -3,7 +3,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../index.css';
 import { Slider, InputNumber, Row, Col, Layout, Button } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+const { Content} = Layout;
 class HyperParametersInteger extends React.Component {
     state = {
         inputValue: 1,

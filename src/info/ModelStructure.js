@@ -2,11 +2,9 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../index.css';
 import '../App.css';
-import { Tree, Button, Row, Layout, Col, Select, InputNumber } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { Button, Row, Layout, Col, Select, InputNumber } from 'antd';
+const { Content } = Layout;
 const { Option } = Select;
-
-const { TreeNode, DirectoryTree } = Tree;
 
 class ModelStructure extends React.Component {
   handleInputShapeChange = () => {
@@ -92,14 +90,14 @@ class ModelStructure extends React.Component {
             </DirectoryTree>
           </Col>
         </Row> */}
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Input Shape
             </Content>
           </Col>
         </Row>
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Select
               labelInValue
@@ -114,14 +112,14 @@ class ModelStructure extends React.Component {
           </Col>
         </Row>
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Application
             </Content>
           </Col>
         </Row>
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Select
               labelInValue
@@ -138,15 +136,15 @@ class ModelStructure extends React.Component {
           </Col>
         </Row>
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Fully-connected 1
             </Content>
           </Col>
         </Row>
-        
-        <Row style={{ padding: '12px 0px'}}>
+
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Select
               labelInValue
@@ -162,7 +160,7 @@ class ModelStructure extends React.Component {
           </Col>
         </Row>
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Fully-connected 2
@@ -171,7 +169,7 @@ class ModelStructure extends React.Component {
         </Row>
 
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Select
               labelInValue
@@ -187,14 +185,14 @@ class ModelStructure extends React.Component {
           </Col>
         </Row>
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Fully-connected 3
             </Content>
           </Col>
         </Row>
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Select
               labelInValue
@@ -210,7 +208,7 @@ class ModelStructure extends React.Component {
           </Col>
         </Row>
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Content>
               Number of categories
@@ -219,12 +217,12 @@ class ModelStructure extends React.Component {
         </Row>
 
 
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <InputNumber min={2} max={100} defaultValue={2} onChange={this.handleCategoryNumberChange} />
           </Col>
         </Row>
-        <Row style={{ padding: '12px 0px'}}>
+        <Row style={{ padding: '12px 0px' }}>
           <Col span={20}>
             <Button type="primary" htmlType="submit">
               Submit

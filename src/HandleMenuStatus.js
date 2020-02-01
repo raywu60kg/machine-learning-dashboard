@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb, Icon, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 import HyperParameters from './info/HyperParameters'
 import ModelStructure from './info/ModelStructure'
 import TrainingStatus from './info/TrainingStatus'
@@ -7,38 +7,7 @@ import EpochsVsLoss from './visualizations/EpochsVsLoss'
 import ConfusionMatrix from './visualizations/ConfusionMatrix'
 import BasicInformation from './info/BasicInformation';
 import RocCurve from './visualizations/RocCurve'
-
-
-// const { Content} = Layout;
-
-// function HandleMenuStatus(props) {
-//     if (props.subMenuIndex === 'basicInformation') {
-//         return <BasicInformation/>
-//     }else if (props.subMenuIndex === 'hyperParameters') {
-//         return <HyperParameters/>
-//     }else if (props.subMenuIndex === 'modelStructure') {
-//         return <ModelStructure/>
-//     }else if (props.subMenuIndex === 'trainingStatus') {
-//         return <TrainingStatus/>
-//     }else if (props.subMenuIndex === 'loss') {
-//         return <LineChart/>
-//     }else if (props.subMenuIndex === 'confusionMatrix') {
-//         return <ConfusionMatrix/>
-//     }else if (props.subMenuIndex === 'rocCurve') {
-//         return <LineChart/>
-//     }
-//     return <Content>Hello, {props.modelKey}, {props.subMenuIndex}</Content>;
-// }
-  
-
-// export default HandleMenuStatus;
-
-
-
-// import React from 'react';
-// import { Layout, Typography } from 'antd';
 const { Title } = Typography;
-
 const { Header, Content} = Layout;
 
 class HandleMenuStatus extends React.Component {
@@ -88,6 +57,4 @@ class HandleMenuStatus extends React.Component {
     }
 }
   
-
-export default HandleMenuStatus;
-  
+export default HandleMenuStatus;  

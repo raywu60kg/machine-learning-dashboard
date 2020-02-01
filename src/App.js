@@ -1,17 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import './index.css';
 import './App.css';
 
 import HandleMenuStatus from './HandleMenuStatus'
-import { Layout, Menu, Breadcrumb, Icon, Typography, Row, Col, Button } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
-const { Title, Paragraph, Text } = Typography;
+const { Footer, Sider } = Layout;
 
 class App extends React.Component {
   constructor(props) {
@@ -44,18 +41,14 @@ class App extends React.Component {
           onCollapse={(collapsed, type) => {
             console.log(collapsed, type);
           }}
-          style={{ padding: '36px 0px'}}
+          style={{ padding: '36px 0px' }}
         >
-          {/* <Content style={{padding:'24px 16px'}}>
-            MACHINE LEARNING DASHBOARD
-          </Content> */}
 
           <Menu
             mode="inline"
             theme="light"
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['modelInformation']}
-          // style={{ height: '100%' }}
           >
             <SubMenu
               key="modelInformation"
@@ -90,7 +83,7 @@ class App extends React.Component {
         </Sider>
         <Layout>
 
-          <HandleMenuStatus  subMenuIndex={this.state.subMenuIndex} />
+          <HandleMenuStatus subMenuIndex={this.state.subMenuIndex} />
 
           <Footer style={{ textAlign: 'center' }}>Machine Learning Dashboard</Footer>
 
