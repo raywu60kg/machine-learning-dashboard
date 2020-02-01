@@ -3,50 +3,14 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../index.css';
 import { Slider, InputNumber, Row, Col, Layout, Button } from 'antd';
-const { Content} = Layout;
-class HyperParametersInteger extends React.Component {
-    state = {
-        inputValue: 1,
-    };
-
-    onChange = value => {
-        this.setState({
-            inputValue: value,
-        });
-    };
-
-    render() {
-        const { inputValue } = this.state;
-        return (
-            <Layout style={{ padding: '0px 36px', background: '#fff' }}>
-
-                <Row>
-                    <Col span={20}>
-                        <Slider
-                            min={1}
-                            max={20}
-                            onChange={this.onChange}
-                            value={typeof inputValue === 'number' ? inputValue : 0}
-                        />
-                    </Col>
-                    <Col span={20}>
-                        <InputNumber
-                            min={1}
-                            max={20}
-                            style={{ marginLeft: 16 }}
-                            value={inputValue}
-                            onChange={this.onChange}
-                        />
-                    </Col>
-                </Row>
-            </Layout>
-        );
-    }
-}
+const { Content } = Layout;
 
 class HyperParametersFloat extends React.Component {
     state = {
         inputValue: 0,
+    };
+    InputNumberOnChange = (value) => {
+        console.log('changed', value);
     };
 
     onChange = value => {
@@ -61,6 +25,7 @@ class HyperParametersFloat extends React.Component {
     render() {
         const { inputValue } = this.state;
         return (
+
             <Row>
                 <Col span={12}>
                     <Slider
@@ -82,6 +47,7 @@ class HyperParametersFloat extends React.Component {
                     />
                 </Col>
             </Row>
+
         );
     }
 }
@@ -91,22 +57,53 @@ class HyperParameters extends React.Component {
     render() {
         return (
             <Layout style={{ padding: '24px 24px', background: '#fff' }}>
-                <Row>
-                    <Content>
-                        Learning rate
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <Content>
+                            Learning rate
                     </Content>
+                    </Col>
                     <HyperParametersFloat />
                 </Row>
-                <Row>
-                    <Content>
-                        Dropout rate
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <Content>
+                            Dropout rate
                     </Content>
+                    </Col>
                     <HyperParametersFloat />
                 </Row>
-                <Row>
-                    <Button type="primary" htmlType="submit">
-                        Submit
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <Content>
+                            Batch Size
+                    </Content>
+                    </Col>
+                </Row>
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <InputNumber min={1} max={1024} defaultValue={32} onChange={this.InputNumberOnChange} />
+                    </Col>
+                </Row>
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <Content>
+                            Training Epochs
+                    </Content>
+                    </Col>
+                </Row>
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <InputNumber min={1} max={100} defaultValue={3} onChange={this.InputNumberOnChange} />
+                    </Col>
+                </Row>
+
+                <Row style={{marginBottom:'12px'}}>
+                    <Col span={16}>
+                        <Button type="primary" htmlType="submit">
+                            Submit
                     </Button>
+                    </Col>
                 </Row>
             </Layout>
         );
