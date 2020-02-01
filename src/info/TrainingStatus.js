@@ -25,7 +25,7 @@ class TrainingStatus extends React.Component {
   }
 
   tick() {
-    if (this.state.IsTrained == 1) {
+    if (this.state.IsTrained === 1) {
       this.setState({
         trainingProgress: this.state.trainingProgress + 1 
       });
@@ -61,17 +61,17 @@ class TrainingStatus extends React.Component {
           />
         </Row>
         <Row style={{ marginBottom: 30 }}>
-          <Col span={4}> 
+          <Col span={6}> 
             <Button type="primary" htmlType="submit" onClick={this.handleStartTrainingOnClick}>
               Start Training
             </Button>
           </Col>
-          <Col span={4}>
+          <Col span={6}>
             <Button type="primary" htmlType="submit" onClick={this.handleStopTrainingOnClick}>
               Stop Training
             </Button>
           </Col>
-          <Col span={4}>
+          <Col span={6}>
             <Button type="primary" htmlType="submit" onClick={this.handleRestartTrainingOnClick}>
               Restart Training
             </Button>
